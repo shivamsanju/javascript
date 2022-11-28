@@ -113,44 +113,22 @@ function welcomePeople(x: string[] | string) {
         console.log("Welcome lone traveler " + x);
     }
 }
-  
-
-
-
-
-/* ------- TYPE ALIASES ------- */
-
-// when we want to use types same types for multiple objects or unions
-type Point = {
-    x: number;
-    y: number;
-}
-
-function printCord(pt: Point): void {
-    console.log("The coordinate's x value is " + pt.x);
-    console.log("The coordinate's y value is " + pt.y);
-}
-printCord({ x: 100, y: 100 });
-
-
-type ID = number | string;
-function printID(id: ID): void {
-    console.log("Id: " + id)
-}
-   
 
 
 
 
 
-/* -------- INTERFACES ------- */
-interface Point2 {
-    x: number;
-    y: number;
-}
+/* -------- LITERAL TYPES ------------ */
 
-function printCoord(pt: Point2) {
-    console.log("The coordinate's x value is " + pt.x);
-    console.log("The coordinate's y value is " + pt.y);
-}
-printCoord({ x: 100, y: 100 })
+let hello: "hello" = "hello";
+// let hello: "hello" = "not hello";; ----> Error
+
+let alignment: "left" | "right" | "center" = "center";
+let binaryNumber: 0 | 1 = 1
+// let binaryNumber2: 0 | 1 = 3 -------> Error
+
+
+
+
+/* ----------- BIG INT -------------- */
+// let bigNumber: bigint = 2000000n; - Available after es2020
